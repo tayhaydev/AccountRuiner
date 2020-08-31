@@ -1,3 +1,5 @@
+![](https://cdn.discordapp.com/attachments/740669580112035945/750086699027136682/unknown.png)
+
 # yet another account ruiner!
 
 ## featuring a special guest, anarchy!
