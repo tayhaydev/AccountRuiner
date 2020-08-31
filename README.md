@@ -2,11 +2,8 @@
 
 <p align="center">
 # yet another account ruiner!
-
 ## featuring a special guest, anarchy!
-
 ## quick rundown
-
 ### -**remove friends**
 ### -**remove dms**
 ### -**remove guilds**
