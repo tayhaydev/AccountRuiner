@@ -1,8 +1,9 @@
 ![](https://cdn.discordapp.com/attachments/740669580112035945/750086699027136682/unknown.png)
 
-<p align="center">
 # yet another account ruiner!<br>
+
 ## featuring a special guest, anarchy!<br>
+
 ## quick rundown<br>
 ### -**remove friends**<br>
 ### -**remove dms**<br>
@@ -11,4 +12,3 @@
 ### -**change user status**<br>
 ### -**change user profile picture**<br>
 ### -**send nice message to every open dm the user has**<br>
-</p>
