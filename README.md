@@ -1,5 +1,3 @@
-![](https://cdn.discordapp.com/attachments/740669580112035945/750086699027136682/unknown.png)
-
 # yet another account ruiner!<br>
 
 ## featuring a special guest, anarchy!<br>
@@ -12,3 +10,5 @@
 ### -**change user status**<br>
 ### -**change user profile picture**<br>
 ### -**send nice message to every open dm the user has**<br>
+
+![](https://cdn.discordapp.com/attachments/740669580112035945/750086699027136682/unknown.png)
