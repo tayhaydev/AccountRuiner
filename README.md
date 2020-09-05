@@ -11,6 +11,7 @@
 * **change user profile picture**
 * **send nice message to every open dm the user has**
 * **spam webhooks**
+  * send nice embeds
 
 ## preview<br>
 ![](https://cdn.discordapp.com/attachments/740669580112035945/751925228942393424/unknown.png)
