@@ -3,14 +3,14 @@
 ## featuring a special guest, anarchy!<br>
 
 ## quick rundown
-* -**remove friends**
-* -**remove dms**
-* -**remove guilds**
-* -**change user language**
-* -**change user status**
-* -**change user profile picture**
-* -**send nice message to every open dm the user has**
-* -**spam webhooks**
+* **remove friends**
+* **remove dms**
+* **remove guilds**
+* **change user language**
+* **change user status**
+* **change user profile picture**
+* **send nice message to every open dm the user has**
+* **spam webhooks**
 
 ## preview<br>
 ![](https://cdn.discordapp.com/attachments/740669580112035945/750761879990829147/unknown.png)
