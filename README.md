@@ -3,7 +3,9 @@
 ## featuring a special guest, anarchy!<br>
 
 ## quick rundown
+
 //USER
+
 * **remove friends**
 * **remove dms**
 * **remove guilds**
@@ -11,7 +13,9 @@
 * **change user status**
 * **change user profile picture**
 * **send nice message to every open dm the user has**
+
 //OTHER
+
 * **spam webhooks**
   * send nice embeds
 
