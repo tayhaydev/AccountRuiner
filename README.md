@@ -4,7 +4,7 @@
 
 ## quick rundown
 
-//USER
+<strong>//USER</strong>
 
 * **remove friends**
 * **remove dms**
@@ -14,7 +14,7 @@
 * **change user profile picture**
 * **send nice message to every open dm the user has**
 
-//OTHER
+<strong>//OTHER</strong>
 
 * **spam webhooks**
   * send nice embeds
