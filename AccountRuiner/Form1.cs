@@ -6,6 +6,8 @@ using Discord;
 using Discord.Gateway;
 using System.Net;
 using System.Deployment.Application;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Accountruiner
 {
@@ -226,7 +228,7 @@ namespace Accountruiner
             client.User.ChangeSettings(new UserSettingsProperties() { Language = DiscordLanguage.Russian });
         }
         #endregion
-
+        
         #region status
         private void metroButton16_Click(object sender, EventArgs e)
         {
@@ -281,7 +283,7 @@ namespace Accountruiner
         }
         #endregion
 
-        #region webhook
+        #region normalwebhook
         class Http
         {
             public static byte[] Post(string uri, NameValueCollection pairs)
@@ -291,13 +293,17 @@ namespace Accountruiner
             }
         }
         
-        public static void sendWebHook(string URL, string msg, string username)
+        public static void sendWebHook(string URL, string msg, string avatar, string username)
         {
             Http.Post(URL, new NameValueCollection()
             { 
                 {
                     "username",
                     username
+                },
+                {
+                    "avatar_url",
+                     avatar
                 },
                 {
                     "content",
@@ -318,7 +324,7 @@ namespace Accountruiner
                 int repeat = metroTrackBar1.Value;
                 for (int i = 0; i < repeat; i++)
                 {
-                    sendWebHook(metroTextBox2.Text, metroTextBox1.Text, metroTextBox3.Text);
+                    sendWebHook(metroTextBox2.Text, metroTextBox1.Text, metroTextBox4.Text, metroTextBox3.Text);
                     System.Threading.Thread.Sleep(1000);
                 }
             }
@@ -338,5 +344,46 @@ namespace Accountruiner
             return true;
         }
         #endregion
+
+
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            WebRequest wr = (HttpWebRequest)WebRequest.Create(metroTextBox2.Text);
+            wr.ContentType = "application/json";
+            wr.Method = "POST";
+
+            using (var streamWriter = new StreamWriter(wr.GetRequestStream()))
+            {
+                string json = JsonConvert.SerializeObject(new
+                {
+                    username = metroTextBox3.Text,
+                    avatar_url = metroTextBox4.Text,
+                    embeds = new[]
+                    {
+                        new {
+                            description = metroTextBox5.Text,
+                            title = metroTextBox6.Text,
+                            color = "15794431",
+                            
+                            author = new {
+                                name = metroTextBox7.Text,
+                                url = "https://tayhay.gq",
+                                icon_url = metroTextBox4.Text,
+                            },
+                            
+                            footer = new {
+                                icon_url = "",
+                                text = metroTextBox8.Text,
+                            },
+                        }
+                    },
+                });
+
+                streamWriter.Write(json);
+            }
+
+            var response = (HttpWebResponse)wr.GetResponse();
+        }
     }
 }
