@@ -2,15 +2,15 @@
 
 ## featuring a special guest, anarchy!<br>
 
-## quick rundown<br>
-### -**remove friends**<br>
-### -**remove dms**<br>
-### -**remove guilds**<br>
-### -**change user language**<br>
-### -**change user status**<br>
-### -**change user profile picture**<br>
-### -**send nice message to every open dm the user has**<br>
-### -**spam webhooks**<br>
+## quick rundown
+* -**remove friends**
+* -**remove dms**
+* -**remove guilds**
+* -**change user language**
+* -**change user status**
+* -**change user profile picture**
+* -**send nice message to every open dm the user has**
+* -**spam webhooks**
 
 ## preview<br>
 ![](https://cdn.discordapp.com/attachments/740669580112035945/750761879990829147/unknown.png)
