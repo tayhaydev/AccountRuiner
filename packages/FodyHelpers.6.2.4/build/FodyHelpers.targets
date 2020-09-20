@@ -1,0 +1,9 @@
+﻿<Project>
+
+  <ItemGroup>
+    <None Update="$(MSBuildProjectName).xcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>  
