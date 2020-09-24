@@ -52,8 +52,9 @@ namespace Accountruiner
             this.uremoveguildsbtn = new MetroFramework.Controls.MetroButton();
             this.utoken = new MetroFramework.Controls.MetroTextBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.tabpage2 = new MetroFramework.Controls.MetroTabPage();
             this.tabpage3 = new MetroFramework.Controls.MetroTabPage();
+            this.whuseragent = new MetroFramework.Controls.MetroTextBox();
+            this.btndelwh = new MetroFramework.Controls.MetroButton();
             this.whfooter = new MetroFramework.Controls.MetroTextBox();
             this.whauthor = new MetroFramework.Controls.MetroTextBox();
             this.wbtitle = new MetroFramework.Controls.MetroTextBox();
@@ -68,8 +69,8 @@ namespace Accountruiner
             this.whmessage = new MetroFramework.Controls.MetroTextBox();
             this.wblbl = new MetroFramework.Controls.MetroLabel();
             this.nwhsendbtn = new MetroFramework.Controls.MetroButton();
-            this.btndelwh = new MetroFramework.Controls.MetroButton();
-            this.whuseragent = new MetroFramework.Controls.MetroTextBox();
+            this.tabpage2 = new MetroFramework.Controls.MetroTabPage();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.tabpage1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -622,25 +623,6 @@ namespace Accountruiner
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
             // 
-            // tabpage2
-            // 
-            this.tabpage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.tabpage2.HorizontalScrollbarBarColor = true;
-            this.tabpage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabpage2.HorizontalScrollbarSize = 10;
-            this.tabpage2.Location = new System.Drawing.Point(4, 41);
-            this.tabpage2.Name = "tabpage2";
-            this.tabpage2.Size = new System.Drawing.Size(969, 462);
-            this.tabpage2.Style = MetroFramework.MetroColorStyle.Pink;
-            this.tabpage2.TabIndex = 6;
-            this.tabpage2.Text = "server";
-            this.tabpage2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabpage2.UseCustomBackColor = true;
-            this.tabpage2.UseCustomForeColor = true;
-            this.tabpage2.VerticalScrollbarBarColor = true;
-            this.tabpage2.VerticalScrollbarHighlightOnWheel = false;
-            this.tabpage2.VerticalScrollbarSize = 10;
-            // 
             // tabpage3
             // 
             this.tabpage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
@@ -675,6 +657,57 @@ namespace Accountruiner
             this.tabpage3.VerticalScrollbarBarColor = true;
             this.tabpage3.VerticalScrollbarHighlightOnWheel = false;
             this.tabpage3.VerticalScrollbarSize = 10;
+            // 
+            // whuseragent
+            // 
+            // 
+            // 
+            // 
+            this.whuseragent.CustomButton.Image = null;
+            this.whuseragent.CustomButton.Location = new System.Drawing.Point(317, 1);
+            this.whuseragent.CustomButton.Name = "";
+            this.whuseragent.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.whuseragent.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.whuseragent.CustomButton.TabIndex = 1;
+            this.whuseragent.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.whuseragent.CustomButton.UseSelectable = true;
+            this.whuseragent.CustomButton.Visible = false;
+            this.whuseragent.Lines = new string[0];
+            this.whuseragent.Location = new System.Drawing.Point(314, 337);
+            this.whuseragent.MaxLength = 32767;
+            this.whuseragent.Name = "whuseragent";
+            this.whuseragent.PasswordChar = '\0';
+            this.whuseragent.PromptText = "user-agent";
+            this.whuseragent.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.whuseragent.SelectedText = "";
+            this.whuseragent.SelectionLength = 0;
+            this.whuseragent.SelectionStart = 0;
+            this.whuseragent.ShortcutsEnabled = true;
+            this.whuseragent.Size = new System.Drawing.Size(339, 23);
+            this.whuseragent.Style = MetroFramework.MetroColorStyle.Black;
+            this.whuseragent.TabIndex = 79;
+            this.whuseragent.Tag = "";
+            this.whuseragent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.whuseragent.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.whuseragent.UseSelectable = true;
+            this.whuseragent.WaterMark = "user-agent";
+            this.whuseragent.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.whuseragent.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btndelwh
+            // 
+            this.btndelwh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.btndelwh.Highlight = true;
+            this.btndelwh.Location = new System.Drawing.Point(314, 366);
+            this.btndelwh.Name = "btndelwh";
+            this.btndelwh.Size = new System.Drawing.Size(339, 23);
+            this.btndelwh.Style = MetroFramework.MetroColorStyle.Yellow;
+            this.btndelwh.TabIndex = 78;
+            this.btndelwh.Text = "delete webhook";
+            this.btndelwh.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btndelwh.UseMnemonic = false;
+            this.btndelwh.UseSelectable = true;
+            this.btndelwh.Click += new System.EventHandler(this.metroButton2_Click_1);
             // 
             // whfooter
             // 
@@ -1065,56 +1098,24 @@ namespace Accountruiner
             this.nwhsendbtn.UseSelectable = true;
             this.nwhsendbtn.Click += new System.EventHandler(this.metroButton1_Click);
             // 
-            // btndelwh
+            // tabpage2
             // 
-            this.btndelwh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.btndelwh.Highlight = true;
-            this.btndelwh.Location = new System.Drawing.Point(314, 366);
-            this.btndelwh.Name = "btndelwh";
-            this.btndelwh.Size = new System.Drawing.Size(339, 23);
-            this.btndelwh.Style = MetroFramework.MetroColorStyle.Yellow;
-            this.btndelwh.TabIndex = 78;
-            this.btndelwh.Text = "delete webhook";
-            this.btndelwh.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btndelwh.UseMnemonic = false;
-            this.btndelwh.UseSelectable = true;
-            this.btndelwh.Click += new System.EventHandler(this.metroButton2_Click_1);
-            // 
-            // whuseragent
-            // 
-            // 
-            // 
-            // 
-            this.whuseragent.CustomButton.Image = null;
-            this.whuseragent.CustomButton.Location = new System.Drawing.Point(317, 1);
-            this.whuseragent.CustomButton.Name = "";
-            this.whuseragent.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.whuseragent.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.whuseragent.CustomButton.TabIndex = 1;
-            this.whuseragent.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.whuseragent.CustomButton.UseSelectable = true;
-            this.whuseragent.CustomButton.Visible = false;
-            this.whuseragent.Lines = new string[0];
-            this.whuseragent.Location = new System.Drawing.Point(314, 337);
-            this.whuseragent.MaxLength = 32767;
-            this.whuseragent.Name = "whuseragent";
-            this.whuseragent.PasswordChar = '\0';
-            this.whuseragent.PromptText = "user-agent";
-            this.whuseragent.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.whuseragent.SelectedText = "";
-            this.whuseragent.SelectionLength = 0;
-            this.whuseragent.SelectionStart = 0;
-            this.whuseragent.ShortcutsEnabled = true;
-            this.whuseragent.Size = new System.Drawing.Size(339, 23);
-            this.whuseragent.Style = MetroFramework.MetroColorStyle.Black;
-            this.whuseragent.TabIndex = 79;
-            this.whuseragent.Tag = "";
-            this.whuseragent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.whuseragent.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.whuseragent.UseSelectable = true;
-            this.whuseragent.WaterMark = "user-agent";
-            this.whuseragent.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.whuseragent.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tabpage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
+            this.tabpage2.HorizontalScrollbarBarColor = true;
+            this.tabpage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabpage2.HorizontalScrollbarSize = 10;
+            this.tabpage2.Location = new System.Drawing.Point(4, 41);
+            this.tabpage2.Name = "tabpage2";
+            this.tabpage2.Size = new System.Drawing.Size(969, 462);
+            this.tabpage2.Style = MetroFramework.MetroColorStyle.Pink;
+            this.tabpage2.TabIndex = 6;
+            this.tabpage2.Text = "server";
+            this.tabpage2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabpage2.UseCustomBackColor = true;
+            this.tabpage2.UseCustomForeColor = true;
+            this.tabpage2.VerticalScrollbarBarColor = true;
+            this.tabpage2.VerticalScrollbarHighlightOnWheel = false;
+            this.tabpage2.VerticalScrollbarSize = 10;
             // 
             // Form1
             // 
@@ -1190,6 +1191,7 @@ namespace Accountruiner
         private MetroFramework.Controls.MetroTextBox whauthor;
         private MetroFramework.Controls.MetroButton btndelwh;
         private MetroFramework.Controls.MetroTextBox whuseragent;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
