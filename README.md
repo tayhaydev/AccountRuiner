@@ -1,18 +1,6 @@
-# 𝗔𝗰𝗰𝗼𝘂𝗻𝘁𝗥𝘂𝗶𝗻𝗲𝗿
+# 𝘄𝗲𝗯𝗵𝗼𝗼𝗸𝘁𝗼𝗼𝗹𝘀
 
-𝙐𝙨𝙚𝙧
-* remove friends
-* remove dms
-* remove guilds
-* change user language
-* change user status
-* change user profile picture
-* send nice message to every open dm the user has
-
-𝙊𝙩𝙝𝙚𝙧
-* spam webhooks
-  * send nice embeds
+🌌 𝗱𝗼 𝘀𝘁𝘂𝗳𝗳 𝘄𝗶𝘁𝗵 𝗱𝗶𝘀𝗰𝗼𝗿𝗱 𝘄𝗲𝗯𝗵𝗼𝗼𝗸𝘀
 
 ## preview<br>
-![](https://cdn.discordapp.com/attachments/740669580112035945/751925228942393424/unknown.png)
-![](https://cdn.discordapp.com/attachments/740669580112035945/751925168053551124/unknown.png)
+![](https://cdn.discordapp.com/attachments/750750380794839164/766062242096611387/unknown.png)
