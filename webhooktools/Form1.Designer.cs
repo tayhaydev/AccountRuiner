@@ -310,7 +310,7 @@ namespace Accountruiner
             this.whavatar.CustomButton.UseSelectable = true;
             this.whavatar.CustomButton.Visible = false;
             this.whavatar.Lines = new string[] {
-        "https://doggo.ninja/BxqWae.png"};
+        "https://doggo.ninja/rFGB14.png"};
             this.whavatar.Location = new System.Drawing.Point(23, 168);
             this.whavatar.MaxLength = 32767;
             this.whavatar.Name = "whavatar";
@@ -325,7 +325,7 @@ namespace Accountruiner
             this.whavatar.Style = MetroFramework.MetroColorStyle.Black;
             this.whavatar.TabIndex = 88;
             this.whavatar.Tag = "";
-            this.whavatar.Text = "https://doggo.ninja/BxqWae.png";
+            this.whavatar.Text = "https://doggo.ninja/rFGB14.png";
             this.whavatar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.whavatar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.whavatar.UseSelectable = true;
